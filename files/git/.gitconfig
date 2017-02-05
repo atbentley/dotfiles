@@ -1,0 +1,17 @@
+[user]
+	name = Andrew Bentley
+	email = andrew.t.bentley@gmail.com
+[alias]
+st = status -s
+lg = log --decorate --oneline --graph
+stat = diff --stat
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = false
+[core]
+	pager = less -FRSX
+[push]
+	default = simple
+[color]
+	ui = always

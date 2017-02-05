@@ -1,0 +1,6 @@
+Dotfiles
+========
+
+``` bash
+./setup.sh
+```

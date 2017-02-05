@@ -2,5 +2,5 @@ Dotfiles
 ========
 
 ``` bash
-./setup.sh
+./install.sh
 ```

@@ -14,7 +14,7 @@ export PATH="/usr/local/texlive/2016basic/bin/x86_64-darwin:$PATH"
 
 # ENV
 export PROJECT_HOME=$HOME/projects
-export JAVA_HOME="$(/usr/libexec/java_home -v 1.8)"
+export JAVA_HOME="$(/usr/libexec/java_home)"
 
 hl() {
     less -p $1 $2

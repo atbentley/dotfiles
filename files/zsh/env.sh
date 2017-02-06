@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 # PATH
-export PATH="/Users/andrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin"
+export PATH="/Users/andrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:$PATH"
 export EDITOR='vim'
 
 # Python
@@ -31,4 +31,6 @@ alias mkenv="virtualenv --python=python3 env"
 alias projects="cd ~/projects"
 alias sources="cd ~/sources"
 alias bugs="cd ~/bugs"
+alias down="cd app/config/assets/edp"
+alias up="cd ../../../../"
 

@@ -3,7 +3,7 @@
 	email = andrew.t.bentley@gmail.com
 [alias]
 st = status -s
-lg = log --decorate --oneline --graph
+lg = log --graph --pretty=format:\"%C(yellow)%h %Creset%C(cyan)(%cr)%Creset%C(red)%C(bold)%d%Creset %s\"
 stat = diff --stat
 [diff]
 	tool = vimdiff

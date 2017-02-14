@@ -10,7 +10,7 @@ export PATH="$PYENV_ROOT/bin:$PATH"
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 
 # Ruby
-eval "$(rbenv init -)"
+which rbenv &> /dev/null && eval "$(rbenv init -)"
 
 # LaTeX
 export PATH="/usr/local/texlive/2016basic/bin/x86_64-darwin:$PATH"

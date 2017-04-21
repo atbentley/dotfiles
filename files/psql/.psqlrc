@@ -1,0 +1,11 @@
+\set QUIET 1
+\pset pager off
+\x auto
+\pset linestyle unicode
+\pset border 1
+
+\set PROMPT1 '%[%033[1;32m%]➜  %[%033[1;33m%]%/%[%033[0m%] '
+\set PROMPT2 ''
+
+\ir .psqlrc-extras
+

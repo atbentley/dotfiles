@@ -24,7 +24,7 @@ hl() {
 }
 
 # ALIASES
-alias t="tree -CA -I \"env|.env|node_modules|*.pyc\""
+alias t="tree -CA -I \".git|env|.env|node_modules|*.pyc\""
 alias venv="source env/bin/activate"
 alias venvv="source .env/bin/activate"
 alias workit="git config user.email \"andrew.bentley@thoughtworks.com\""
@@ -36,4 +36,4 @@ alias sources="cd ~/sources"
 alias bugs="cd ~/bugs"
 alias down="cd app/config/assets/edp"
 alias up="cd ../../../../"
-
+alias qr="qrcode-terminal"

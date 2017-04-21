@@ -1,7 +1,7 @@
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_CUSTOM="$HOME/.zsh_custom"
 ZSH_THEME="atb"
-plugins=(git colored-man colorize pip python brew osx zsh-syntax-highlighting)
+plugins=(git colored-man colorize pip python brew osx zsh-syntax-highlighting grunt)
 
 source ~/env.sh
 source $ZSH/oh-my-zsh.sh
@@ -17,3 +17,4 @@ PERL_MB_OPT="--install_base \"/Users/andrew/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/Users/andrew/perl5"; export PERL_MM_OPT;
 
 fpath=(/usr/local/share/zsh-completions $fpath)
+

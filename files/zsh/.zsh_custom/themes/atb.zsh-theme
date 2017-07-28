@@ -26,9 +26,18 @@ function get_venv() {
   fi
 }
 
+function get_git_prompt_info() {
+  commits_ahead=$(git_commits_ahead 2> /dev/null)
+  if [[ ${commits_ahead} -ne 0 ]]; then
+    echo "$(git_prompt_info)%{$fg_bold[red]%}↑${commits_ahead} "
+  else
+    echo "$(git_prompt_info)"
+  fi
+}
+
 VIRTUAL_ENV_DISABLE_PROMPT=true
 local ret_status="%(?:%{$fg_bold[green]%}➜  :%{$fg_bold[red]%}➜  )"
-PROMPT='${ret_status}$(get_pwd)$(get_venv)$(parse_git_dirty)$(git_prompt_info)%{$reset_color%}'
+PROMPT='${ret_status}$(get_pwd)$(get_venv)$(parse_git_dirty)$(get_git_prompt_info)%{$reset_color%}'
 
 ZSH_THEME_GIT_PROMPT_PREFIX=""
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%} "

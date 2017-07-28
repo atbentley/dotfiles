@@ -26,20 +26,32 @@ function get_venv() {
   fi
 }
 
-function get_git_prompt_info() {
+function get_git_work_or_personal() {
+  if ls -a . | grep '^.git$' &> /dev/null; then
+    if git config user.email | grep 'gmail.com' &> /dev/null; then
+      echo "🍺 "
+    else
+      echo "💻 "
+    fi
+  fi
+}
+
+function get_git_commits_ahead() {
   commits_ahead=$(git_commits_ahead 2> /dev/null)
   if [[ ${commits_ahead} -ne 0 ]]; then
-    echo "$(git_prompt_info)%{$fg_bold[red]%}↑${commits_ahead} "
-  else
-    echo "$(git_prompt_info)"
+    echo "%{$fg_bold[red]%}▴${commits_ahead}"
   fi
+}
+
+function get_git_prompt_info() {
+  echo "$(get_git_work_or_personal)$(git_prompt_info)$(get_git_commits_ahead)"
 }
 
 VIRTUAL_ENV_DISABLE_PROMPT=true
 local ret_status="%(?:%{$fg_bold[green]%}➜  :%{$fg_bold[red]%}➜  )"
-PROMPT='${ret_status}$(get_pwd)$(get_venv)$(parse_git_dirty)$(get_git_prompt_info)%{$reset_color%}'
+PROMPT='${ret_status}$(get_pwd)$(get_venv)$(parse_git_dirty)$(get_git_prompt_info)%{$reset_color%} '
 
 ZSH_THEME_GIT_PROMPT_PREFIX=""
-ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%} "
+ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg_bold[red]%}"
 ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg_bold[green]%}"

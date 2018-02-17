@@ -1,0 +1,17 @@
+#! /bin/bash
+
+set -e
+
+arg=$1
+
+if [[ ${arg} == "--public" ]] || [[ ${arg} == "-p" ]]; then
+  curl --silent --write-out "\n" http://ifconfig.in
+elif [[ -z ${arg} ]]; then
+  ifconfig en0 | grep inet | grep -v inet6 | cut -d ' ' -f2
+else
+  echo "Usage: ip [options...]"
+  echo "Options:"
+  echo " -h, --help    Show this help message"
+  echo " -p, --public  Display pubic IP instead of local IP"
+fi
+

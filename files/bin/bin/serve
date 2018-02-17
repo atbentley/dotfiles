@@ -1,0 +1,10 @@
+#! /bin/bash
+
+PYTHON_VERSION=$(python --version 2>&1 | cut -d' ' -f2 | cut -d. -f1)
+
+if [ $PYTHON_VERSION = 2 ]; then
+    python -m SimpleHTTPServer $@
+else
+    python -m http.server $@
+fi
+

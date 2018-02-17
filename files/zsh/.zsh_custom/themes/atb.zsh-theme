@@ -1,38 +1,22 @@
 function get_pwd(){
   git_root=$PWD
+  levels=0
   while [[ $git_root != / && ! -e $git_root/.git ]]; do
+    levels=$(( levels + 1 ))
     git_root=$git_root:h
   done
-  if [[ $git_root = / ]]; then
-    unset git_root
-    prompt_short_dir=%~
+
+
+  if [[ ${levels} -gt 2 ]]; then
+    echo "%{$fg_bold[cyan]%}${git_root##*/}/…/${PWD##*/}%{$reset_color%} "
   else
-    parent=${git_root%\/*}
-    prompt_short_dir=${PWD#$parent/}
-  fi
-  echo "%{$fg[cyan]%}$prompt_short_dir%{$reset_color%} "
-}
-
-function get_venv() {
-  if test ! -z $VIRTUAL_ENV; then
-    parent=${VIRTUAL_ENV%/*}
-    if [ "${PWD##$parent}" != "$PWD" ]; then
-      color="%{$fg_bold[green]%}"
+    if [[ $git_root = / ]]; then
+      prompt_short_dir=%~
     else
-      color="%{$fg_bold[red]%}"
+      parent=${git_root%\/*}
+      prompt_short_dir=${PWD#$parent/}
     fi
-    ref=$(basename $VIRTUAL_ENV) || return
-    echo "${color}${ref} "
-  fi
-}
-
-function get_git_work_or_personal() {
-  if ls -a . | grep '^.git$' &> /dev/null; then
-    if git config user.email | grep 'gmail.com' &> /dev/null; then
-      echo "🍺 "
-    else
-      echo "💻 "
-    fi
+    echo "%{$fg_bold[cyan]%}$prompt_short_dir%{$reset_color%} "
   fi
 }
 
@@ -44,12 +28,15 @@ function get_git_commits_ahead() {
 }
 
 function get_git_prompt_info() {
-  echo "$(get_git_work_or_personal)$(git_prompt_info)$(get_git_commits_ahead)"
+  branch="$(git_prompt_info)"
+  if [[ ! -z ${branch} ]]; then
+    echo "${branch}$(get_git_commits_ahead) "
+  fi
 }
 
 VIRTUAL_ENV_DISABLE_PROMPT=true
-local ret_status="%(?:%{$fg_bold[green]%}➜  :%{$fg_bold[red]%}➜  )"
-PROMPT='${ret_status}$(get_pwd)$(get_venv)$(parse_git_dirty)$(get_git_prompt_info)%{$reset_color%} '
+local ret_status="%(?:%{$fg_bold[green]%}∴ :%{$fg_bold[red]%}∴ )"
+PROMPT='$(get_pwd)$(parse_git_dirty)$(get_git_prompt_info)${ret_status}%{$reset_color%}'
 
 ZSH_THEME_GIT_PROMPT_PREFIX=""
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"

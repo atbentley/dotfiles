@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+set -e
+
+if ! which qrcode-terminal &> /dev/null; then
+  echo "Install qrcode-terminal"
+  echo "  npm install -g qrcode-terminal"
+  exit 1
+fi
+
+word=$1
+
+if [ -z ${word} ]; then
+  read -s word
+fi
+
+qrcode-terminal ${word}
+

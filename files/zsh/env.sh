@@ -22,15 +22,19 @@ export PATH="/usr/local/texlive/2016basic/bin/x86_64-darwin:$PATH"
 # Java
 export JAVA_HOME="$(/usr/libexec/java_home)"
 
+# Rust
+export PATH="~/.cargo/bin:$PATH"
+
 hl() {
     less -p $1 $2
 }
+
+code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}
 
 # Aliases
 alias t="tree -CA -I \".git|env|.env|node_modules|*.pyc\""
 alias venv="source env/bin/activate"
 alias venvv="source .env/bin/activate"
-alias workit="git config user.email \"andrew.bentley@thoughtworks.com\""
 alias fpp="fpp -nfc"
 alias mkenv="virtualenv --python=python3 env"
 alias qr="qrcode-terminal"

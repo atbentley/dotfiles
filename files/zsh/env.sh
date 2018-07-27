@@ -20,10 +20,17 @@ export PATH="/Users/andrew/go/bin:$PATH"
 export PATH="/usr/local/texlive/2016basic/bin/x86_64-darwin:$PATH"
 
 # Java
-export JAVA_HOME="$(/usr/libexec/java_home)"
+eval "$(jenv init -)"
 
 # Rust
-export PATH="~/.cargo/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
+
+# Node
+export PATH="/usr/local/opt/node@8/bin:$PATH"
+
+# z
+source /usr/local/etc/profile.d/z.sh
+alias j=z
 
 hl() {
   less -p $1 $2

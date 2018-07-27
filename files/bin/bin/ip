@@ -5,7 +5,7 @@ set -e
 arg=$1
 
 if [[ ${arg} == "--public" ]] || [[ ${arg} == "-p" ]]; then
-  curl --silent --write-out "\n" http://ifconfig.in
+  curl --silent --write-out "\n" http://ifconfig.co
 elif [[ -z ${arg} ]]; then
   ifconfig en0 | grep inet | grep -v inet6 | cut -d ' ' -f2
 else

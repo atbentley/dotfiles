@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
-if [[ "${@#--help}" != "$@" ]]; then
+set -e
+
+if [[ $# -eq 0 ]] || [[ "${@#--help}" != "$@" ]]; then
   echo "Usage: get-cert host [port]"
 else
   host=$1

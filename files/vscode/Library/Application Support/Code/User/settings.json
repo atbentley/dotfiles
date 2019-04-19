@@ -1,66 +1,92 @@
 // Place your settings in this file to overwrite the default settings
 {
-    "git.path": "/usr/bin/git",
-    "files.exclude": {
-        // editors
-        "**/.idea": true,
-        "**/.vscode": true,
-        // python
-        "**/.cache": true,
-        "**/env": true,
-        "**/*.pyc": true,
-        "**/*.coverage": true,
-        "**/__pycache__": true
-    },
-    "editor.rulers": [
-        120
-    ],
-    "editor.renderWhitespace": "boundary",
-    "editor.tabSize": 2,
-    "editor.minimap.enabled": false,
-    "editor.autoIndent": true,
-    "editor.formatOnSave": true,
-    "window.zoomLevel": 0,
-    "workbench.iconTheme": "material-icon-theme",
-    "workbench.colorTheme": "Popping and Locking",
-    "workbench.startupEditor": "newUntitledFile",
-    "[python]": {
-        "editor.tabSize": 4
-    },
-    "[terraform]": {
-        "editor.formatOnSave": false
-    },
-    "extensions.ignoreRecommendations": false,
-    "docker.showExplorer": false,
-    "files.associations": {
-        "Dockerfile.build": "dockerfile",
-        "go": "shellscript"
-    },
-    "material-icon-theme.files.associations": {
-        "Dockerfile.build": "docker",
-        "go": "console"
-    },
-    "files.autoSave": "onFocusChange",
-    "editor.fontSize": 19,
-    "editor.fontFamily": "'Source Code Pro', Menlo, Monaco, 'Courier New', monospace, 'Apple Color Emoji'",
-    "gitlens.advanced.messages": {
-        "suppressShowKeyBindingsNotice": true
-    },
-    "gitlens.blame.avatars": false,
-    "gitlens.explorers.avatars": false,
-    "gitlens.codeLens.scopes": [],
-    "cSpell.userWords": [
-        "terraform"
-    ],
-    "terraform.codelens.enabled": true,
-    "telemetry.enableTelemetry": false,
-    "java.home": "/Users/andrew/.jenv/versions/10.0",
-    "zenMode.fullScreen": false,
-    "zenMode.restore": true,
-    "editor.wordWrapColumn": 120,
-    "zenMode.centerLayout": false,
-    "java.format.enabled": false,
-    "[java]": {
-        "editor.tabSize": 4
+  "git.path": "/usr/bin/git",
+  "files.exclude": {
+    "**/.idea": true,
+    "**/.vscode": true,
+    "**/.cache": true,
+    "**/env": true,
+    "**/*.pyc": true,
+    "**/*.coverage": true,
+    "**/__pycache__": true,
+    "**/.classpath": true,
+    "**/.project": true,
+    "**/.settings": true,
+    "**/.factorypath": true
+  },
+  "editor.rulers": [120],
+  "editor.renderWhitespace": "boundary",
+  "editor.tabSize": 2,
+  "editor.minimap.enabled": false,
+  "editor.autoIndent": true,
+  "editor.formatOnSave": true,
+  "window.zoomLevel": 1,
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.colorTheme": "Popping and Locking",
+  "workbench.startupEditor": "newUntitledFile",
+  "[python]": {
+    "editor.tabSize": 4
+  },
+  "[terraform]": {
+    "editor.formatOnSave": false
+  },
+  "[yaml]": {
+    "editor.formatOnSave": false
+  },
+  "extensions.ignoreRecommendations": false,
+  "docker.showExplorer": false,
+  "files.associations": {
+    "Dockerfile.build": "dockerfile",
+    "go": "shellscript"
+  },
+  "material-icon-theme.files.associations": {
+    "Dockerfile.build": "docker",
+    "go": "console"
+  },
+  "files.autoSave": "onFocusChange",
+  "editor.fontSize": 19,
+  "editor.fontFamily": "'Source Code Pro', Menlo, Monaco, 'Courier New', monospace, 'Apple Color Emoji'",
+  "gitlens.advanced.messages": {
+    "suppressShowKeyBindingsNotice": true
+  },
+  "gitlens.blame.avatars": false,
+  "gitlens.explorers.avatars": false,
+  "gitlens.codeLens.scopes": [],
+  "cSpell.userWords": ["terraform"],
+  "terraform.codelens.enabled": true,
+  "telemetry.enableTelemetry": false,
+  "java.home": "/Users/andrew/.jenv/versions/10.0",
+  "zenMode.fullScreen": false,
+  "zenMode.restore": true,
+  "editor.wordWrapColumn": 120,
+  "zenMode.centerLayout": false,
+  "java.format.enabled": false,
+  "[java]": {
+    "editor.tabSize": 4
+  },
+  "breadcrumbs.enabled": true,
+  "workbench.activityBar.visible": true,
+  "better-comments.tags": [
+    {
+      "tag": "-",
+      "color": "#FF2D00",
+      "strikethrough": false,
+      "backgroundColor": "#f7a896"
     }
+  ],
+  "prettier.printWidth": 120,
+  "explorer.confirmDragAndDrop": false,
+  "explorer.confirmDelete": false,
+  "prettier.disableLanguages": ["vue", "yaml"],
+  "[rust]": {
+    "editor.tabSize": 4
+  },
+  "rust.clippy_preference": "on",
+  "gitlens.views.avatars": false,
+  "gitlens.views.compare.avatars": false,
+  "gitlens.views.repositories.avatars": false,
+  "gitlens.views.search.avatars": false,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue"
 }

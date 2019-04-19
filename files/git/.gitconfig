@@ -20,6 +20,7 @@
     cmd = code --wait $MERGED
 [core]
 	pager = less -FRSX
+	autocrlf = false
 [push]
 	default = simple
 [color]

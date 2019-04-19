@@ -26,11 +26,17 @@ eval "$(jenv init -)"
 export PATH="$HOME/.cargo/bin:$PATH"
 
 # Node
-export PATH="/usr/local/opt/node@8/bin:$PATH"
+export PATH="$HOME/.nenv/bin:$PATH"
+eval "$(nenv init -)"
 
 # z
 source /usr/local/etc/profile.d/z.sh
 alias j=z
+
+# yubikey
+export GPG_TTY="$(tty)"
+export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+gpgconf --launch gpg-agent
 
 hl() {
   less -p $1 $2

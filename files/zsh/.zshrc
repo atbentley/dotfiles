@@ -1,7 +1,7 @@
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_CUSTOM="$HOME/.zsh_custom"
 ZSH_THEME="atb"
-plugins=(git colored-man colorize pip python brew osx zsh-syntax-highlighting grunt)
+plugins=()
 
 source ~/env.sh
 source $ZSH/oh-my-zsh.sh
